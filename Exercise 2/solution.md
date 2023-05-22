@@ -18,7 +18,7 @@ header-includes: |
 # Exercise 1
 
 ## Perceptrons
-The activation function for each perceptron will be the step function $$\varphi(x) = \begin{cases} 1 & x \ge 0 \\ 0 & \text{otherwise} \end{cases}$$
+The activation function for each perceptron will be the step function $$\varphi(x) = \begin{cases} 1 & x > 0 \\ 0 & \text{otherwise} \end{cases}$$
 
 The weights and biases will be the following:
 
@@ -32,7 +32,7 @@ The weights and biases will be the following:
 
 3) PMAT
 	- weights: $c$ with $0$s replaced by $-1$
-	- bias: $\sum c + 1$
+	- bias: $-\sum c + 1$
 
 _The idea for PMAT is that if it perfectly corresponds, $\beta X$ will sum to $\sum c$ and so it will activate, and if it doesn't it will always be lower due to either $+0$ if it doesn't correspond or $-1$ ._
 
