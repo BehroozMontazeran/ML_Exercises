@@ -26,7 +26,7 @@ The weights and biases will be the following:
 	- weights: $\{1\}^D$
 	- bias: $0$
 
-2) AND
+2) MOR
 	- weights: $c$
 	- bias: $0$
 
