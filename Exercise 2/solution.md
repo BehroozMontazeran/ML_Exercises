@@ -13,6 +13,8 @@ header-includes: |
 	\AtBeginDocument{\let\maketitle\relax}
 	\renewcommand{\headrulewidth}{0.4pt}
 	\renewcommand{\footrulewidth}{0.4pt}
+geometry: margin=2.5cm
+engine: lualatex
 ---
 
 # Exercise 1

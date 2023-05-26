@@ -60,7 +60,10 @@ This classifier (especially our version) will likely be very hard to train, sinc
 
 \color{DarkGreen}
 
-Again, the ideas are the same, although our explanation of the different layers could have been more elaborate. We did not mention how to generalize our method, but it should be pretty obvious. Our reasoning for why the classifier would fail in practice was perhaps a bit misguided.
+Again, the ideas are the same, although our explanation of the different layers could have been more elaborate.
+We did not mention how to generalize our method, but it should be pretty obvious from the diagram we drew.
+
+Our reasoning for why the classifier would fail in practice was perhaps a bit misguided (the most important issue is the lack of generalization, the training could possibly be achieved by some other means).
 
 \color{black}
 
