@@ -7,7 +7,7 @@ header-includes: |
 	\usepackage{fancyhdr}
 	\usepackage[czech]{babel}
 	\pagestyle{fancy}
-	\lhead{ML Exercise 2}
+	\lhead{ML Exercise 3}
 	\rhead{Behrooz Montazeran, Jannis Heising, Tomáš Sláma}
 	\setlength{\headheight}{20pt}
 	\AtBeginDocument{\let\maketitle\relax}
@@ -27,7 +27,7 @@ See the notebooks for answers to exercises 1-3.
 \includegraphics[width=.8\linewidth]{ex_4_network_sketch}
 \end{center}
 
-## Sample image from tesst set
+## Sample image from test set
 
 \begin{center}
 \includegraphics[width=.4\linewidth]{ex_4_input}
