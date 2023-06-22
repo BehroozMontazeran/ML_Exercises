@@ -1,0 +1,51 @@
+\documentclass{article}
+
+
+\usepackage{amsmath, amsthm, stmaryrd}
+
+\newcommand{\T}{{\rm T}}
+
+
+\begin{document}
+\section*{Exercise 2}
+
+We start by calculating the derivative:
+
+\begin{align*}
+\frac{\partial}{\partial \beta} \sum_{i=1}^N (y_i^* - X_i \beta)^2 &= \sum_{i=1}^N -2X_i^\T (y_i^* - X_i \beta)\\
+&= -2 \left(\sum_{i=1}^N X_i^\T y_i^* - (\sum_{i=1}^N X_i^\T X_i)\beta\right).\tag{1}
+\end{align*}
+
+Because the two classes are balanced, the first sum can be rewritten in the following way:
+\begin{align*}
+\sum_{i=1}^N X_i^\T y_i^* &= \sum_{y_i^* = 1} X_i^\T - \sum_{y_i^*= -1} X_i^\T\\
+&= \frac{N}{2} (\mu_1 - \mu_{-1})^\T\tag{2}
+\end{align*}
+
+This will be the right-hand side of the desired equation. To derive the left-hand side, we will work backwards:
+
+\begin{align*}
+N \Sigma &= \sum_{y_i^* = 1} (X_i - \mu_1)^\T (X_i - \mu_1) + \sum_{y_i^* = -1} (X_i - \mu_{-1})^\T (X_i - \mu_{-1})\\
+&= \sum_{y_i^* = 1} (X_i^\T X_i - X_i^\T \mu_1 - \mu_1^\T X_i + \mu_1^\T \mu_1) + \sum_{y_i^* = -1} (X_i^\T X_i - X_i^\T \mu_{-1} - \mu_{-1}^\T X_i + \mu_{-1}^\T \mu_{-1})\\
+&= \sum_{i=1}^N X_i^\T X_i - \left(\sum_{y_i^* = 1} X_i^\T\right) \mu_1 - \mu_1^\T \left(\sum_{y_i^* = 1} X_i\right) + \frac{N}{2} \mu_1^\T \mu_1\\
+&\hspace{1em} - \left(\sum_{y_i^* = -1} X_i^\T\right) \mu_{-1} - \mu_{-1}^\T \left(\sum_{y_i^* = -1} X_i\right) + \frac{N}{2} \mu_{-1}^\T \mu_{-1}\\
+&= \sum_{i=1}^N X_i^\T X_i - \frac{N}{2} \left(\mu_1^\T \mu_1 + \mu_{-1}^\T \mu_{-1}\right).
+\end{align*}
+
+We add the second term of the left-hand side, namely $\frac{1}{4}(\mu_1 - \mu_{-1})^\T (\mu_1 - \mu_{-1})$:
+\begin{align*}
+&\Sigma + \frac{1}{4}(\mu_1 - \mu_{-1})^\T (\mu_1 - \mu_{-1})\\
+&= \frac{1}{N} \sum_{i=1}^N X_i^\T X_i - \frac{1}{2} \left(\mu_1^\T \mu_1 + \mu_{-1}^\T \mu_{-1}\right) + \frac{1}{4}(\mu_1^\T \mu_1 - \mu_1^\T \mu_{-1} - \mu_{-1}^\T \mu_1 + \mu_{-1}^\T \mu_{-1})\\
+&= \frac{1}{N} \sum_{i=1}^N X_i^\T X_i - \frac{1}{4}(\mu_1^\T \mu_1 + \mu_1^\T \mu_{-1} + \mu_{-1}^\T \mu_1 + \mu_{-1}^\T \mu_{-1})\\
+&= \frac{1}{N} \sum_{i=1}^N X_i^\T X_i - \frac{1}{4}(\mu_1 + \mu_{-1})^\T (\mu_1 + \mu_{-1})\\
+&= \frac{1}{N} \sum_{i=1}^N X_i^\T X_i.\tag{3}
+\end{align*}
+
+For the last step, note that because the data are assumed to be centered, we find that $\mu_1 + \mu_{-1} = \frac{2}{N} \sum_{i=1}^N X_i = 0$, thus the last term vanishes. Putting everything together, we get the desired equation:
+\begin{gather*}
+\frac{\partial}{\partial \beta} \sum_{i=1}^N (y_i^* - X_i \beta)^2 \overset{\text{!}}{=} 0\\
+\overset{\text{(1)}}{\Rightarrow} \sum_{i=1}^N X_i^\T y_i^* = (\sum_{i=1}^N X_i^\T X_i)\beta\\
+\overset{\text{(2),(3)}}{\Longrightarrow} \frac{N}{2} (\mu_1 - \mu_{-1})^\T = N\left(\Sigma + \frac{1}{4}(\mu_1 - \mu_{-1})^\T (\mu_1 - \mu_{-1})\right) \beta\\
+\Rightarrow \Sigma \beta + \frac{1}{4}(\mu_1 - \mu_{-1})^\T (\mu_1 - \mu_{-1}) \beta = \frac{1}{2} (\mu_1 - \mu_{-1})^\T.
+\end{gather*}
+\end{document}
